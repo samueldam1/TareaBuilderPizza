@@ -110,7 +110,7 @@ public class BuilderCoche implements IBuilder {
     
     
     public BuilderCoche(){
-        _Coche = new Automovil();
+        _coche = new Automovil();
     }    
     
     public Automovil build(){
