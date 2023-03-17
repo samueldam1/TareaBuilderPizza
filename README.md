@@ -91,7 +91,7 @@ classDiagram
 # ¿Podríamos combinarlo con el patrón Factory? Explícalo con algo de código como lo harías?
 
 Podríamos hacer que el Builder sea una interfaz de la que se hereden los métodos para modificar los parámetros.
-
+```
 // InterfazBuilder
 public interface IBuilder {
     void setPuertas(int num_puertas);
@@ -100,10 +100,11 @@ public interface IBuilder {
     void setCromado(boolean cromado);
     void setMate(boolean mate);
 }
-
+```
 Luego podría ser implementado por otras clases Builder.
-
-public class BuilderCoche implements Builder {
+```
+public class BuilderCoche implements IBuilder {
+    
     
     protected Automovil _coche;
     
@@ -136,12 +137,11 @@ public class BuilderCoche implements Builder {
         _coche.mate = mate;
         return this;
     }
-    
+```    
 Podemos hacer varios builders de esta manera.
     
-}
-
-public class BuilderFurgoneta implements Builder {
+```
+public class BuilderFurgoneta implements IBuilder {
     
     protected Automovil _Furgoneta;
     
@@ -178,7 +178,7 @@ public class BuilderFurgoneta implements Builder {
     
     
 }
-
+```
 ```mermaid
 classDiagram
     
